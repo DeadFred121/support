@@ -1,0 +1,23 @@
+<h1>Test</h1>
+
+<%= form_with(url: support_url, local: true) do |f| %>
+  <% if @errors.present? %>
+  <div class="errors">
+    <%= @errors.each do |error| %>
+      <%= error %><br>
+    <% end %>
+  </div>
+  <% end %>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <%= f.submit 'Send!!' %>
+
+<% end %>
